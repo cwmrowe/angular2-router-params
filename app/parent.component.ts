@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteConfig, ComponentInstruction} from 'angular2/router';
-import {ThingsDetailComponent} from './things-detail.component';
+import {ChildComponent} from './child.component';
 
 @Component({
     selector: 'empty-component',
@@ -9,18 +9,18 @@ import {ThingsDetailComponent} from './things-detail.component';
 class EmptyComponent{}
 
 @Component({
-    selector: 'my-things',
+    selector: 'parent-comp',
     template: `
-    <h2>My Things</h2>
+    <h2>Parent</h2>
     <p>Search Term: {{searchTerm}}</p>
     <router-outlet></router-outlet>`,
     directives: [ROUTER_DIRECTIVES]
 })
-@RouteConfig([
+@RouteConfig([ 
     {path: '/', useAsDefault: true, name: 'Empty', component: EmptyComponent},
-    {path: '/thing/:id', name: 'ThingsDetail', component: ThingsDetailComponent}
+    {path: '/child', name: 'Child', component: ChildComponent}
 ])
-export class ThingsComponent { 
+export class ParentComponent { 
     
     searchTerm;
     

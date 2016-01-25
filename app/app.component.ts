@@ -1,20 +1,20 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
-import {ThingsComponent} from './things.component'; 
+import {ParentComponent} from './parent.component'; 
 
 @Component({
     selector: 'my-app',
     template: `
-    <h1>My App</h1>
+    <h1>Root</h1>
     <ul>
-    <li><a [routerLink]="['Things', {search: 'foo'}]">Things Search</a>
-    <li><a [routerLink]="['Things', 'ThingsDetail', {id: 30}]">Thing 30</a>
-    <li><a [routerLink]="['Things', {search: 'foo'}, 'ThingsDetail', {id: 30}]">Thing 30 with search</a>
+    <li><a [routerLink]="['Parent', {search: 'foo'}]">Parent Search</a>
+    <li><a [routerLink]="['Parent', 'Child']">Child</a>
+    <li><a [routerLink]="['Parent', {search: 'foo'}, 'Child']">Child with parent search</a>
     </ul>
     <router-outlet></router-outlet>`,
     directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-    {path: '/things/...', useAsDefault: true, name: 'Things', component: ThingsComponent}
+    {path: '/parent/...', useAsDefault: true, name: 'Parent', component: ParentComponent}
 ])
 export class AppComponent {}
