@@ -7,9 +7,9 @@ import {ParentComponent} from './parent.component';
     template: `
     <h1>Root</h1>
     <ul>
-    <li><a [routerLink]="['Parent', {search: 'foo'}]">Parent Search</a>
+    <li><a [routerLink]="['Parent', {search: 'foo'}]">Parent Search (params lost on refresh)</a>
     <li><a [routerLink]="['Parent', 'Child']">Child</a>
-    <li><a [routerLink]="['Parent', {search: 'foo'}, 'Child']">Child with parent search</a>
+    <li><a [routerLink]="['Parent', {search: 'foo'}, 'Child']">Child with parent search (params not lost)</a>
     </ul>
     <router-outlet></router-outlet>`,
     directives: [ROUTER_DIRECTIVES]
