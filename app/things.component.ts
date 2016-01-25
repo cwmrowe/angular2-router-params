@@ -2,8 +2,6 @@ import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteConfig, ComponentInstruction} from 'angular2/router';
 import {ThingsDetailComponent} from './things-detail.component';
 
-var markerCount = 0;
-
 @Component({
     selector: 'empty-component',
     template: "<p>EMPTY!!!</p>"

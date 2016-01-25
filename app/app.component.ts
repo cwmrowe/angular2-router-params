@@ -2,8 +2,6 @@ import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
 import {ThingsComponent} from './things.component'; 
 
-var markerCount = 0;
-
 @Component({
     selector: 'my-app',
     template: `
@@ -19,8 +17,4 @@ var markerCount = 0;
 @RouteConfig([
     {path: '/things/...', useAsDefault: true, name: 'Things', component: ThingsComponent}
 ])
-export class AppComponent { 
-    
-    
-    
-}
+export class AppComponent {}
